@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>My New Hugo Site</title>
-    <link>http://jspann.github.io/</link>
-    <description>Recent content on My New Hugo Site</description>
+    <title>While in the lab</title>
+    <link>http://jspann.github.io/blog/</link>
+    <description>Recent content on While in the lab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 13 Feb 2024 17:42:56 -0500</lastBuildDate>
-    <atom:link href="http://jspann.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://jspann.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>My First Post</title>
-      <link>http://jspann.github.io/posts/my-first-post/</link>
+      <link>http://jspann.github.io/blog/posts/my-first-post/</link>
       <pubDate>Tue, 13 Feb 2024 17:42:56 -0500</pubDate>
-      <guid>http://jspann.github.io/posts/my-first-post/</guid>
+      <guid>http://jspann.github.io/blog/posts/my-first-post/</guid>
       <description>hey hey hey!</description>
     </item>
   </channel>

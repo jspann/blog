@@ -1,5 +1,7 @@
-baseURL = 'http://jspann.github.io/'
+baseURL = 'http://jspann.github.io/blog/'
 languageCode = 'en-us'
 title = 'While in the lab'
 theme = "holy"
 publishDir = "docs"
+
+googleAnalytics = "G-R6YPR17YY6"
