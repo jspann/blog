@@ -4,16 +4,23 @@
     <title>Posts on While in the lab</title>
     <link>http://jspann.github.io/blog/posts/</link>
     <description>Recent content in Posts on While in the lab</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 13 Feb 2024 20:07:53 -0500</lastBuildDate>
+    <lastBuildDate>Thu, 25 Dec 2025 03:12:31 -0500</lastBuildDate>
     <atom:link href="http://jspann.github.io/blog/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Playing with Apple’s MLX</title>
+      <link>http://jspann.github.io/blog/posts/playing_with_mlx/</link>
+      <pubDate>Thu, 25 Dec 2025 03:12:31 -0500</pubDate>
+      <guid>http://jspann.github.io/blog/posts/playing_with_mlx/</guid>
+      <description>&lt;p&gt;Earlier this year at WWDC 2025 (Apple&amp;rsquo;s annual developer conference) I got to meet the people who work on Apple&amp;rsquo;s frameworks and APIs. Most notably, I spoke with the people working on the MLX framework. While I&amp;rsquo;d heard of MLX in passing, I had no experience with it. I was surprised to see how close it is to PyTorch and how easy it was to jump into. I&amp;rsquo;ve played with it since then and wanted to make an intro post around it.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>I looked out the window and saw it was grey outside</title>
       <link>http://jspann.github.io/blog/posts/sky-cam/</link>
       <pubDate>Tue, 13 Feb 2024 20:07:53 -0500</pubDate>
       <guid>http://jspann.github.io/blog/posts/sky-cam/</guid>
-      <description>But I wondered how grey? Rochester has some of the greyest skies of all cities in the United States but after 9 years here, this felt like one of the sunniest winters ever. I couldn’t prove it, but I did want to compare the sky colors across months and hopefully see trends over a few years.&#xA;I had remembered previously seeing a NYC sky color website and loved the idea. I wanted to build something similar but for Rochester but also build out a dataset for future comparisons.</description>
+      <description>&lt;p&gt;But I wondered how grey? Rochester has &lt;a href=&#34;https://www.statista.com/statistics/226760/us-cities-with-the-most-cloudy-days/&#34;&gt;some of the greyest skies of all cities in the United States&lt;/a&gt; but after 9 years here, this felt like one of the sunniest winters ever. I couldn’t prove it, but I did want to compare the sky colors across months and hopefully see trends over a few years.&lt;/p&gt;&#xA;&lt;p&gt;I had remembered previously seeing a &lt;a href=&#34;https://nskyc.com&#34;&gt;NYC sky color&lt;/a&gt; website and loved the idea. I wanted to build something similar but for Rochester but also build out a dataset for future comparisons. This also gave me the chance to play around with another cloud service (I usually use Digital Ocean for all my hosting needs).&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

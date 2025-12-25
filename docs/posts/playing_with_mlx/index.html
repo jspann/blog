@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <title>Playing with Apple’s MLX - While in the lab</title>
+
+    
+    
+    <meta name="description" content="Earlier this year at WWDC 2025 (Apple&rsquo;s annual developer conference) I got to meet the people who work on Apple&rsquo;s frameworks and APIs. Most notably, I spoke with the people working on the MLX framework. While I&rsquo;d heard of MLX in passing, I had no experience with it. I was surprised to see how close it is to PyTorch and how easy it was to jump into. I&rsquo;ve played with it since then and wanted to make an intro post around it." />
+    <meta name="author" content="" />
+    
+
+    <link href="https://unpkg.com/@master/normal.css" rel="stylesheet">
+    <script src="https://unpkg.com/@master/style@1.5.0"></script>
+    <script src="https://unpkg.com/@master/styles@1.13.0"></script>
+    <script src="https://unpkg.com/master-styles-group"></script>
+    <script src="https://unpkg.com/themes.js"></script>
+    <script>window.themes = window.themes || new window.Themes()</script>
+
+    <style>
+        :root {
+            --font-sans: "Inter var", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+        }
+    </style></head>
+<body class="bg:fade-84@dark font:fade-16@dark font:sans">
+    <nav class="w:full h:90 fixed bg:fade-84/.95@dark bg:white z:1000">
+    <div class="
+        h:full
+        w:full
+        max-w:1200
+        mx:auto
+        px:32
+        d:flex
+        align-items:center
+    ">
+        <div>
+            <a href="/" class="mr-3 font:extralight">
+              
+              While in the lab
+              
+            </a>
+        </div>
+
+        <div class="ml:auto">
+            
+            
+            
+        </div>
+    </div>
+</nav>
+<div class="d:flex flex:column@<=sm pt:90 px:24 jc:center gap:44 word-break:break-word">
+        <div class="max-w:700 w:full box:content-box">
+<article class="box:border-box pt:32">
+    <header class="mb:32">
+        <div class="font:40 font:extrabold">Playing with Apple’s MLX</div>
+        <div class="mt:16 f:fade-60">
+            <time>Dec 25, 2025</time>
+            </div>
+    </header><div class="
+    _:where(a):hover{text-decoration-color:fade}
+    _:where(a){text-decoration:2;underline;fade-10;_text-decoration-color:fade-70@dark}
+    _:where(blockquote){bl:5;solid;fade-76/.1;_bl:5;solid;fade-34/.1@dark}
+    _:where(code){font:90%;_v:middle}
+    _:where(code:not(.highlight_*,pre_*)){p:2;6;_r:4}
+    _:where(del){text-decoration:1;line-through;fade-68;_text-decoration-color:red-64@dark}
+    _:where(figcaption){text:14;_p:10;20;0;_width:fit;_mx:auto;_font:fade-56;_font:fade-57@dark}
+    _:where(h1){font:40;_font:extrabold}
+    _:where(h1,h2,h3)+:where(h1,h2,h3){mt:.5em}
+    _:where(h1,h2,h3,h4,h5,h6){mt:2em}
+    _:where(h2){mb:1em;_font:32}
+    _:where(h3){font:24}
+    _:where(h4){font:20}
+    _:where(h5){font:16}
+    _:where(h6){font:14}
+    _:where(li)::marker{font:fade-44;_font:fade-68@dark}
+    _:where(li){pl:.375em}
+    _:where(mark){text-decoration:1;underline;#fce016;_bg:transparent;_text-decoration-color:rgb(252;224;22/.5)@dark}
+    _:where(p,li){font:fade-76;_font:16;_line-height:1.65;_font:fade-34@dark}
+    _:where(p,pre,blockquote,figure,ul,ol,table){my:1.125em}
+    >:first-child{mt:0!}
+    _:where(pre){p:20;_r:8;_overflow:auto}
+    _:where(pre,code:not(.highlight_*)){bg:fade-2;_bg:fade-92!@dark}
+    _:where(strong,b,a,code:not(.highlight_*),mark,del){font:fade-92;_font:fade-12@dark}
+    _:where(table){width:full;_border-spacing:0}
+    _:where(td){v:baseline}
+    _:where(td,th):first-child{pl:0}
+    _:where(td,th):last-child{pr:0}
+    _:where(td,th){bb:1;solid;fade-92/.06;_p:6;_b:fade-4/.04@dark}
+    _:where(th){font:fade-78;_font:14;_text:left;_font:fade-12@dark}
+    _:where(th,p_code,li_code,a,mark){font:semibold;_font:medium@dark}
+    _:where(ul){list-style-type:disc}
+    _:where(ul,ol,blockquote){pl:1.5em}
+    _:where(video,img){max-width:full}
+    _:where(a,mark){text-underline-offset:3}
+    _:where(hr){h:2;_bg:fade-10;_bg:fade-70@dark;_my:3em}
+"><p>Earlier this year at WWDC 2025 (Apple&rsquo;s annual developer conference) I got to meet the people who work on Apple&rsquo;s frameworks and APIs. Most notably, I spoke with the people working on the MLX framework. While I&rsquo;d heard of MLX in passing, I had no experience with it. I was surprised to see how close it is to PyTorch and how easy it was to jump into. I&rsquo;ve played with it since then and wanted to make an intro post around it.</p>
+<h2 id="precursor---what-frameworks-already-exist">Precursor - what frameworks already exist?</h2>
+<table>
+  <thead>
+      <tr>
+          <th>Framework</th>
+          <th>Language</th>
+          <th>Some (not all) use cases</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Scikit-learn</td>
+          <td>Python</td>
+          <td>Basic model/data analysis</td>
+      </tr>
+      <tr>
+          <td>Keras*</td>
+          <td>Python</td>
+          <td>Pre-built layers, Sequential API</td>
+      </tr>
+      <tr>
+          <td>Tensorflow</td>
+          <td>Python, C/C++, JS</td>
+          <td>General Deep Learning model training</td>
+      </tr>
+      <tr>
+          <td>JAX</td>
+          <td>Python</td>
+          <td>Distributed CPU/GPU/TPU model training, numerical computing, Just In time compilation</td>
+      </tr>
+      <tr>
+          <td>PyTorch</td>
+          <td>Python C/C++</td>
+          <td>General Deep Learning model training</td>
+      </tr>
+      <tr>
+          <td>MLX</td>
+          <td>Python, Swift, C/C++</td>
+          <td>Unified Memory, Lazy and dynamic computation</td>
+      </tr>
+  </tbody>
+</table>
+<p>*Note: Keras is wrapped around JAX, Tensorflow or PyTorch</p>
+<p>There&rsquo;s a lot of overlap between MLX and other ML libraries, but in general MLX is trying to address two areas:</p>
+<ol>
+<li>Optimization for devices that share memory between the CPU and GPU (Apple Silicon)</li>
+<li>Lazy evaluation AND dynamically constructed graphs</li>
+</ol>
+<p>The MLX framework specifically addresses the second point with function transformations that optimize your computation graph or the differentiation processes themselves.</p>
+<h2 id="what-is-mlx">What is MLX?</h2>
+<p>For training, MLX takes advantage of the Unified Memory model that Apple&rsquo;s Silicon devices (iPhone, Macbook Pro, etc.) have. Non-unified Memory devices have the CPU and GPU be fully separate components, but on Apple Silicon, they&rsquo;re literally on the same chip. This has the advantage of sharing data between the CPU and GPU way faster and splitting operations between them with less complexity.</p>
+<p>MLX let&rsquo;s you tinker with what unit you want to compute on, while also stepping in to prevent race conditions or breaks in your computation graph. MLX also has some starter layers and modules (<code>mlx.nn</code>), while also providing some faster operations (<code>mlx.fast</code>) if you want to accelerate some operations.</p>
+<p>The lazy evaluation means while you may specify operations (e.g. addition, multiplication), when combined with the dynamically constructed graphs, changing the size of your inputs won&rsquo;t massively slow down your compilation.</p>
+<p><strong>Note:</strong> MLX is different from Apple&rsquo;s <a href="https://developer.apple.com/documentation/coreml">CoreML framework</a> which you&rsquo;d use for loading a model you&rsquo;ve already built elsewhere and customizing/personalizing it on-device.</p>
+<h2 id="get-started">Get started</h2>
+<p>Install the mlx package
+Via uv: <code>uv add mlx</code>
+Or via pip: <code>pip install mlx</code>
+You can also install it yourself via git or build a CUDA version with the instructions <a href="https://ml-explore.github.io/mlx/build/html/install.html">on the offical site</a></p>
+<p>Many of the array operations come straight from numpy, with many of operations not actually being executed until their evaluated. For example,</p>
+<pre tabindex="0"><code>import mlx.core as mx
+
+a = mx.array([1,2,3,4])
+b = mx.ones(4)
+c = a+b
+print(c)
+</code></pre><p>The line <code>c = a+b</code> only builds the computation graph, while the calculation isn&rsquo;t actually done until I run <code>print(c)</code> and try to see <code>c</code>&rsquo;s value.</p>
+<hr>
+<p>To take advantage of the unified memory of Apple Silicon devices, during evaluation, MLX uses its lazy evaluation procedure to determine how to break up the work of your computational graph across your GPU/CPU:</p>
+<pre tabindex="0"><code>import mlx.core as mx
+
+x_input = mx.array([0.0, (mx.pi/2), (mx.pi/2)*3, mx.pi])
+
+sin_input = mx.sin(x_input)
+cos_input = mx.cos(x_input)
+
+addition = mx.add(sin_input, cos_input)
+difference = mx.subtract(sin_input, cos_input)
+</code></pre><p>However, you can also specify where the computation is run:</p>
+<pre tabindex="0"><code>import mlx.core as mx
+
+x_input = mx.array([0.0, (mx.pi/2), (mx.pi/2)*3, mx.pi])
+
+sin_input = mx.sin(x_input)
+cos_input = mx.cos(x_input)
+
+addition = mx.add(sin_input, cos_input, stream=mx.cpu)
+difference = mx.subtract(sin_input, cos_input, stream=mx.gpu)
+</code></pre><hr>
+<p>For building a basic neural network, the <code>mlx.nn</code> module supports basic layers, similar to PyTorch. You can create a subclass of <code>mlx.nn.Module</code> and fill in the calls to <code>__init__()</code>, which is called on the object&rsquo;s initialization and <code>__call__()</code>, which like PyTorch&rsquo;s <code>forward()</code> is called when a forward pass is done:</p>
+<pre tabindex="0"><code>import mlx.core as mx
+import mlx.nn as nn
+
+class basicNetwork(nn.Module):
+    def __init__(self, in_dims: int, out_dims: int):
+        super().__init__()
+
+        self.layers = []
+
+    def __call__(self, x):
+        return x
+</code></pre><hr>
+<p>There&rsquo;s also more tricks to play with (distributing computation across devices, using a CUDA backend, Interfacing with the Metal framework for specialized GPU operations, function transformations, &hellip;) but I&rsquo;ll have to save that for another blog post.</p>
+<h2 id="in-closing">In closing</h2>
+<p>Long term, I believe the pendulum will swing from cloud-based inference, back to local-first designs and at-home models/LLMs. One of the books I&rsquo;ve been reading through, <a href="https://www.cambridge.org/core/books/bayesian-methods-for-interaction-and-design/721123C200F67FD94DA8DDFD561162A8">Bayesian Methods for Interaction and Design</a>, has me convinced that there&rsquo;s a real opportunity for the next wave of HCI tools to be not only personalized (e.g. Generative User Interfaces, individual cognitive modeling) and context aware (e.g. Scene Analysis), but also fully local and on-device. MLX seems to be working towards that goal via consumer hardware, but I still have questions including how to take advantage of the Neural Engine, or how to export MLX-trained models directly to CoreML (I&rsquo;m not sure there&rsquo;s an API for that). I&rsquo;m excited about this area so I&rsquo;m looking forward to playing around with MLX more as it develops!</p>
+<hr>
+<p>No LLMs were used in writing or preparation of this post.</p>
+</div></article>
+<footer class="py:24">
+    <div class="f:fade-30 f:14 mb:8"></div>
+    <div class="f:fade-60 f:12">Theme <a class="f:bold" href="https://github.com/serkodev/holy" _target="_blank">Holy</a></div>
+</footer></div>
+    </div>
+</body>
+
+</html>
