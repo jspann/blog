@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <title>Organizing my screenshots folder - While in the lab</title>
+
+    
+    
+    <meta name="description" content="When I get a new mac the first things I do is run:
+## Chosing where I want to store my screenshots
+SCREENSHOTS_FOLDER_PATH=&#34;$HOME/Screenshots&#34;
+SCREENSHOTS_URL_STRING=&#34;file://${SCREENSHOTS_FOLDER_PATH}&#34;
+
+## Creating the folder
+mkdir $SCREENSHOTS_FOLDER_PATH
+
+
+## Telling MacOS to store my screenshots here
+defaults write com.apple.screencapture location $SCREENSHOTS_FOLDER_PATH; killall SystemUIServer
+so all my my screenshots don&rsquo;t clutter my desktop (which usually has some busy image of a big city; Currently it&rsquo;s this great picture of NYC).
+The problem is that this folder gets full way too quickly. It&rsquo;s things I want to remember, tweets that made me laugh, error logs from my console, diagrams/graphs from talks over zoom, etc. Over time it gets huge, and while I always say &ldquo;I&rsquo;ll organize it later and get rid of the the garbage later&rdquo;, although later never comes." />
+    <meta name="author" content="" />
+    
+
+    <link href="https://unpkg.com/@master/normal.css" rel="stylesheet">
+    <script src="https://unpkg.com/@master/style@1.5.0"></script>
+    <script src="https://unpkg.com/@master/styles@1.13.0"></script>
+    <script src="https://unpkg.com/master-styles-group"></script>
+    <script src="https://unpkg.com/themes.js"></script>
+    <script>window.themes = window.themes || new window.Themes()</script>
+
+    <style>
+        :root {
+            --font-sans: "Inter var", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+        }
+    </style></head>
+<body class="bg:fade-84@dark font:fade-16@dark font:sans">
+    <nav class="w:full h:90 fixed bg:fade-84/.95@dark bg:white z:1000">
+    <div class="
+        h:full
+        w:full
+        max-w:1200
+        mx:auto
+        px:32
+        d:flex
+        align-items:center
+    ">
+        <div>
+            <a href="/" class="mr-3 font:extralight">
+              
+              While in the lab
+              
+            </a>
+        </div>
+
+        <div class="ml:auto">
+            
+            
+            
+        </div>
+    </div>
+</nav>
+<div class="d:flex flex:column@<=sm pt:90 px:24 jc:center gap:44 word-break:break-word">
+        <div class="max-w:700 w:full box:content-box">
+<article class="box:border-box pt:32">
+    <header class="mb:32">
+        <div class="font:40 font:extrabold">Organizing my screenshots folder</div>
+        <div class="mt:16 f:fade-60">
+            <time>Apr 3, 2026</time>
+            </div>
+    </header><div class="
+    _:where(a):hover{text-decoration-color:fade}
+    _:where(a){text-decoration:2;underline;fade-10;_text-decoration-color:fade-70@dark}
+    _:where(blockquote){bl:5;solid;fade-76/.1;_bl:5;solid;fade-34/.1@dark}
+    _:where(code){font:90%;_v:middle}
+    _:where(code:not(.highlight_*,pre_*)){p:2;6;_r:4}
+    _:where(del){text-decoration:1;line-through;fade-68;_text-decoration-color:red-64@dark}
+    _:where(figcaption){text:14;_p:10;20;0;_width:fit;_mx:auto;_font:fade-56;_font:fade-57@dark}
+    _:where(h1){font:40;_font:extrabold}
+    _:where(h1,h2,h3)+:where(h1,h2,h3){mt:.5em}
+    _:where(h1,h2,h3,h4,h5,h6){mt:2em}
+    _:where(h2){mb:1em;_font:32}
+    _:where(h3){font:24}
+    _:where(h4){font:20}
+    _:where(h5){font:16}
+    _:where(h6){font:14}
+    _:where(li)::marker{font:fade-44;_font:fade-68@dark}
+    _:where(li){pl:.375em}
+    _:where(mark){text-decoration:1;underline;#fce016;_bg:transparent;_text-decoration-color:rgb(252;224;22/.5)@dark}
+    _:where(p,li){font:fade-76;_font:16;_line-height:1.65;_font:fade-34@dark}
+    _:where(p,pre,blockquote,figure,ul,ol,table){my:1.125em}
+    >:first-child{mt:0!}
+    _:where(pre){p:20;_r:8;_overflow:auto}
+    _:where(pre,code:not(.highlight_*)){bg:fade-2;_bg:fade-92!@dark}
+    _:where(strong,b,a,code:not(.highlight_*),mark,del){font:fade-92;_font:fade-12@dark}
+    _:where(table){width:full;_border-spacing:0}
+    _:where(td){v:baseline}
+    _:where(td,th):first-child{pl:0}
+    _:where(td,th):last-child{pr:0}
+    _:where(td,th){bb:1;solid;fade-92/.06;_p:6;_b:fade-4/.04@dark}
+    _:where(th){font:fade-78;_font:14;_text:left;_font:fade-12@dark}
+    _:where(th,p_code,li_code,a,mark){font:semibold;_font:medium@dark}
+    _:where(ul){list-style-type:disc}
+    _:where(ul,ol,blockquote){pl:1.5em}
+    _:where(video,img){max-width:full}
+    _:where(a,mark){text-underline-offset:3}
+    _:where(hr){h:2;_bg:fade-10;_bg:fade-70@dark;_my:3em}
+"><p>When I get a new mac the first things I do is run:</p>
+<pre tabindex="0"><code>## Chosing where I want to store my screenshots
+SCREENSHOTS_FOLDER_PATH=&#34;$HOME/Screenshots&#34;
+SCREENSHOTS_URL_STRING=&#34;file://${SCREENSHOTS_FOLDER_PATH}&#34;
+
+## Creating the folder
+mkdir $SCREENSHOTS_FOLDER_PATH
+
+
+## Telling MacOS to store my screenshots here
+defaults write com.apple.screencapture location $SCREENSHOTS_FOLDER_PATH; killall SystemUIServer
+</code></pre><p>so all my my screenshots don&rsquo;t clutter my desktop (which usually has some busy image of a big city; Currently it&rsquo;s <a href="https://www.pexels.com/photo/drone-shot-of-city-buildings-6559385/">this great picture of NYC</a>).</p>
+<p>The problem is that this folder gets full way too quickly. It&rsquo;s things I want to remember, tweets that made me laugh, error logs from my console, diagrams/graphs from talks over zoom, etc. Over time it gets huge, and while I always say &ldquo;I&rsquo;ll organize it later and get rid of the the garbage later&rdquo;, although later never comes.</p>
+<p><img src="https://jspann.me/blog_images/my_screenshots_folder.png" alt=""></p>
+<p>At the time of writing there&rsquo;s 834 PNGs in the folder (Nov 13, 2025 - April 2, 2026). If I spent 3 seconds per image (lower bound), I could have this done in an hour; That never happens though and I&rsquo;d mull over questions like &ldquo;why did I take this photo?&rdquo; or &ldquo;Was it the only one like this?&rdquo;, which would add to that time. While I do want to go through these pictures, constantly context switching between what is in the images is not something I repeatedly want to do.</p>
+<h3 id="wouldnt-it-be-nice-if">Wouldn&rsquo;t it be nice if&hellip;.</h3>
+<p>I want to organize my screenshots folder. LLMs have totally subsumed areas of computer vision (semantic understanding, character recognition, etc.) and would be great to have one tool for understanding a photo and what I might want to do with it later. I use Google Gemini a lot but I can&rsquo;t drop every image in (would take forever), an API might be too expensive (PhD stipend), and the contents might be sensitive (tax information, API keys, etc.). I&rsquo;m pretty excited about local LLMs so this would be a good time to try that out.</p>
+<h3 id="actually-building-the-tool">Actually building the tool</h3>
+<p>This became a series of trial and error of using local LLMs (something that isn&rsquo;t great now but IMO has a lot of potential). MLX is Apple&rsquo;s way of doing machine learning on their machines and can take advantage of the neural engine (a chip that runs the models a bit faster), so I wanted to start there.</p>
+<p>I started with <a href="https://github.com/ml-explore/mlx-lm">mlx-lm</a> to get familiar with working with the <a href="https://huggingface.co/mlx-community">open source MLX models that exist on hugging face</a> and running them on my device. I did not realize initially but, <code>mlx-lm</code> only does text inputs and hallucinates if you try to add image inputs, so I switched over to <a href="https://github.com/Blaizzy/mlx-vlm">mlx-vlm</a>. I had one quirk with an &ldquo;Unrecognized image processor&rdquo; but a <a href="https://github.com/huggingface/transformers/issues/36193">github issue</a> pointed out that, after downloading it, I just need to delete one line in the model&rsquo;s config file.</p>
+<p>I was most familiar with the Qwen family of models (from Alibaba) and opted to use one of those. I&rsquo;m using a Late 2025 MacBook Pro with an 16GB M5 (MDE04LL/A model). I wanted to have something that could just run in the background or overnight, so my first choice (&ldquo;mlx-community/Qwen3.5-27B-4bit&rdquo;) was way too big and (&ldquo;mlx-community/Qwen2-VL-2B-Instruct-4bit&rdquo;) didn&rsquo;t have great outputs, but (&ldquo;mlx-community/Qwen3-VL-4B-Instruct-4bit&rdquo;) was <em>just</em> right.</p>
+<p>I gave it the following prompt:</p>
+<pre tabindex="0"><code>&#34;Describe this image. Generate 5 generate keywords for this file based on the content in its image. Each keyword should be one word (no spaces or compound words), only use letters A-Z (no special characters or numbers), and use general everyday words that don&#39;t go beyond a 8th grade reading level. The goal is to have keywords that overlap with other images in the future, but have the keywords here be distinct enough to separate out the images later. Format the output as KEYWORDS: [keyword1, keyword2, keyword3]&#34;
+</code></pre><p>and parsed the outputs with regular expressions (<code>&quot;[ ][a-zA-Z0-9_]*[,| $ |$]&quot;</code>) to clean up the keywords I got back. I stored the keywords in a pandas dataframe and output that just so I could audit the image tags it was generating.</p>
+<p><img src="https://jspann.me/blog_images/test_run_categories.png" alt=""></p>
+<p>Next I gave the VLM the tags from the images and had it compile 5 overall themes for them based on its role as an &ldquo;expert organizer&rdquo;. With those, I had the script create a directory for each theme and map (again with the VLM) each image, based on its tags, to one of the 5 themes and move the folder to the directory.</p>
+<h3 id="hey-it-works">Hey it works!</h3>
+<p>A quick <code>uv run organizefiles.py</code> gave me a proof of concept with a test folder of 12 images and took 4 minutes. Not lighting fast, but works and can be improved later!</p>
+<p><img src="https://jspann.me/blog_images/test_run_directory_output.png" alt=""></p>
+<p><strong>I&rsquo;ll update this section of the post once I&rsquo;ve run it on my full screenshots folder.</strong></p>
+<h3 id="the-end">The end</h3>
+<p>It was fun to build this by hand and make something I wanted to use! There&rsquo;s a few things I&rsquo;d love to try (using word embeddings like word2vec to create directory names that are semantically close to the image tags, batching the images to make the search faster, grouping images by my potential intended use of the image) but for now, I&rsquo;ve got a good starting place! The final script can be found <a href="https://gist.github.com/jspann/5014fa290e28f4bc6fc6aa51f8caa563">here</a>.</p>
+<p>Overall, I really want local and on-device models to succeed. I think the use cases for LLMs/VLMs expands when a person knows that their data isn&rsquo;t retained by an unauditable 3rd party and, or the content verifiably remains private. I hope to have more local tools like this for every day use in the future!</p>
+<hr>
+<p>No LLM was used in writing or preparation of this post.</p>
+</div></article>
+<footer class="py:24">
+    <div class="f:fade-30 f:14 mb:8"></div>
+    <div class="f:fade-60 f:12">Theme <a class="f:bold" href="https://github.com/serkodev/holy" _target="_blank">Holy</a></div>
+</footer></div>
+    </div>
+</body>
+
+</html>

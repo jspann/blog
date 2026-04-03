@@ -6,8 +6,15 @@
     <description>Recent content in Posts on While in the lab</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 25 Dec 2025 03:12:31 -0500</lastBuildDate>
+    <lastBuildDate>Fri, 03 Apr 2026 09:22:20 -0400</lastBuildDate>
     <atom:link href="http://jspann.github.io/blog/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Organizing my screenshots folder</title>
+      <link>http://jspann.github.io/blog/posts/my_screenshots_arent_organized/</link>
+      <pubDate>Fri, 03 Apr 2026 09:22:20 -0400</pubDate>
+      <guid>http://jspann.github.io/blog/posts/my_screenshots_arent_organized/</guid>
+      <description>&lt;p&gt;When I get a new mac the first things I do is run:&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;## Chosing where I want to store my screenshots&#xA;SCREENSHOTS_FOLDER_PATH=&amp;#34;$HOME/Screenshots&amp;#34;&#xA;SCREENSHOTS_URL_STRING=&amp;#34;file://${SCREENSHOTS_FOLDER_PATH}&amp;#34;&#xA;&#xA;## Creating the folder&#xA;mkdir $SCREENSHOTS_FOLDER_PATH&#xA;&#xA;&#xA;## Telling MacOS to store my screenshots here&#xA;defaults write com.apple.screencapture location $SCREENSHOTS_FOLDER_PATH; killall SystemUIServer&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;so all my my screenshots don&amp;rsquo;t clutter my desktop (which usually has some busy image of a big city; Currently it&amp;rsquo;s &lt;a href=&#34;https://www.pexels.com/photo/drone-shot-of-city-buildings-6559385/&#34;&gt;this great picture of NYC&lt;/a&gt;).&lt;/p&gt;&#xA;&lt;p&gt;The problem is that this folder gets full way too quickly. It&amp;rsquo;s things I want to remember, tweets that made me laugh, error logs from my console, diagrams/graphs from talks over zoom, etc. Over time it gets huge, and while I always say &amp;ldquo;I&amp;rsquo;ll organize it later and get rid of the the garbage later&amp;rdquo;, although later never comes.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Playing with Apple’s MLX</title>
       <link>http://jspann.github.io/blog/posts/playing_with_mlx/</link>

@@ -9,7 +9,7 @@
     
     
     <meta name="description" content="But I wondered how grey? Rochester has some of the greyest skies of all cities in the United States but after 9 years here, this felt like one of the sunniest winters ever. I couldn’t prove it, but I did want to compare the sky colors across months and hopefully see trends over a few years.
-I had remembered previously seeing a NYC sky color website and loved the idea. I wanted to build something similar but for Rochester but also build out a dataset for future comparisons." />
+I had remembered previously seeing a NYC sky color website and loved the idea. I wanted to build something similar but for Rochester but also build out a dataset for future comparisons. This also gave me the chance to play around with another cloud service (I usually use Digital Ocean for all my hosting needs)." />
     <meta name="author" content="" />
     
 
@@ -25,18 +25,8 @@ I had remembered previously seeing a NYC sky color website and loved the idea. I
             --font-sans: "Inter var", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
         }
     </style></head>
-
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-R6YPR17YY6"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-R6YPR17YY6');
-</script><body class="bg:fade-84@dark font:fade-16@dark font:sans">
-    
-<nav class="w:full h:90 fixed bg:fade-84/.95@dark bg:white z:1000">
+<body class="bg:fade-84@dark font:fade-16@dark font:sans">
+    <nav class="w:full h:90 fixed bg:fade-84/.95@dark bg:white z:1000">
     <div class="
         h:full
         w:full
@@ -118,25 +108,20 @@ I had remembered previously seeing a NYC sky color website and loved the idea. I
 <p>This led me to look for livestreams that were already active online. My exclusion criteria was based on how stable (not likely to move and have continuous uptime) the camera was, how clear the sky was in the video’s picture, and ease of saving images from it.</p>
 <p>I looked for a few livestreams online and found the Genesee Valley Audubon Society’s <a href="https://rfalconcam.com/rfc-main/">falcon cams</a>. I had never heard of this before but they have, for 25 years, kept a series of cameras on  nest boxes that falcons live in, in the area. The picture quality was great but after taking a few sample images, I realized the cameras moved every now and again to focus on the birds, so the position of the sky wouldn’t be the same. The livestream wasn’t a good fit but it’s always fun to learn more about local Rochester history and the people who make great stuff here.</p>
 <p>I kept searching and found New York State (NYS) traffic cams. They were all over the county, and a few highways, and were not likely to move. Best part was that they have developer access!</p>
-<!-- raw HTML omitted -->
 <p><img src="https://jspann.me/blog_images/nys_cam_side.png" alt=""></p>
-<!-- raw HTML omitted -->
 <p>In late December 2023 I applied to get access to the service…and never heard back. Looking closer at the videos later, I realized this wouldn’t be a good fit since many of the videos were black and white, or just looked at the road and gave a narrow view of the sky that could be blocked by the glare from a nearby street lamp.</p>
 <p>After more searching I took a break and watched the news with my Dad.
 …<em><strong>The news!</strong></em></p>
 <p>Sometimes during local weather reports, the reporter will stand in front of a livestream of the weather outside to share their report (like so: <a href="https://www.youtube.com/watch?v=2Yb_VA4L3YU">https://www.youtube.com/watch?v=2Yb_VA4L3YU</a>). The cameras don’t move (and aren’t likely to do so), contain sizable portions of the sky, and are constantly running. After some light searching I even realized they’re shared <a href="https://www.whec.com/first-alert-live-camera-network/">online</a>! I sent some cold emails to a few local stations and eventually got permission to use a weather camera pointed at Lake Ontario and the color filled sky above it. The camera feed was updated hourly and would be trivial to download from a publicly available web address on their site.</p>
 <p><img src="https://jspann.me/blog_images/camera_screenshot.jpg" alt=""></p>
-<!-- raw HTML omitted -->
 <h2 id="what-is-an-average-sky">What is an average sky?</h2>
 <p>I wrote a python script to grab the top quarter of the image (the sky part) 5 minutes after the start of every hour (1:05a, 2:05a, …) with crontab. It saves it to a Google Cloud VM Instance (e2-micro) that was paid for with credits that I got from a hackathon a few years back. Google Cloud has a lot of tools and features, but it’s way more organized and intuitive than when I first tried using it in undergrad. There were some quirks but I get why it’s a heavily used service.</p>
 <p>One question I came across was the difference between the average color and the dominant color. The former is a mean of pixel values (average of the red in each pixel, average of green in each pixel, average of blue in each pixel), while the latter is the color that is the most common and stands out in the image. I found the dominant image with K-means clustering (<a href="https://stackoverflow.com/questions/43111029/how-to-find-the-average-colour-of-an-image-in-python-with-opencv">based on this SO answer</a>) and saved that as an image was taken.</p>
 <p>The site is a Flask template with the most recent photo from the lighthouse live stream at the top, the most recent colors of the sky (and their hex values) decending below, and a link to a chart of the sky&rsquo;s colors (which is described in the next section).</p>
-<!-- raw HTML omitted -->
 <p><img src="https://jspann.me/blog_images/full_sky_site.png" alt=""></p>
 <h2 id="how-much-does-the-sky-change">How much does the sky change?</h2>
 <p>To address my initial question, I have the system plot a distribution of sky colors associated with the sun’s height when the photo was taken. In other words, it is a hour of the day in Rochester (ex. 2p = Hour 14) vs. height of the sun in the sky graph, where I plot the color of the sky at that time on the graph. I did this with <a href="http://docs.pysolar.org/en/latest/">PySolar</a>, which has the funny subtitle of “staring directly at the sun since 2007”. After learning the difference between azimuth and altitude, and adding some jitter so I could see the different colors that could happen at each hour, I got a fun graph like this:
 <img src="https://jspann.me/blog_images/sky_plot.png" alt=""></p>
-<!-- raw HTML omitted -->
 <p>For now it is just a few data points from the past month (since I started recording image data on January 11th 2024) but over time I hope to get more detail on how the sky’s colors shift during the year and eventually make plots like this to compare monthly.</p>
 <p>Thanks for reading and if you want to play around with the tool you can at my website <a href="http://rocsky.jspann.me">rocsky.jspann.me</a> .</p>
 </div></article>
