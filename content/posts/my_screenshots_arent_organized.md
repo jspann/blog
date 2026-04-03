@@ -1,5 +1,5 @@
 +++
-title = "Organizing my screenshots folder"
+title = "Organizing my screenshots folder with a local VLM"
 date = 2026-04-03T09:22:20-04:00
 draft = false
 +++
