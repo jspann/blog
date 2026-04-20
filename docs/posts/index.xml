@@ -6,8 +6,15 @@
     <description>Recent content in Posts on While in the lab</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 03 Apr 2026 09:22:20 -0400</lastBuildDate>
+    <lastBuildDate>Mon, 20 Apr 2026 09:41:39 -0400</lastBuildDate>
     <atom:link href="http://jspann.github.io/blog/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Creating an MCP Server to answer questions about me</title>
+      <link>http://jspann.github.io/blog/posts/aboutme_mcp/</link>
+      <pubDate>Mon, 20 Apr 2026 09:41:39 -0400</pubDate>
+      <guid>http://jspann.github.io/blog/posts/aboutme_mcp/</guid>
+      <description>&lt;p&gt;I caught up with a friend on the phone on saturday who mentioned he was using an MCP Server to interact with Google Flights.&#x9;Knowing how much it sucks to coordinate travel online, that immediately caught my attention. He told me about one for reddit and that used &lt;a href=&#34;https://geminicli.com&#34;&gt;Gemini CLI&lt;/a&gt; (&lt;em&gt;Google, you need to advertise this more!&lt;/em&gt;) to do it.&lt;/p&gt;&#xA;&lt;p&gt;Later, also on the phone, in the same day, my dad asked &amp;ldquo;What is an MCP Server?&amp;rdquo;. In passing, I had heard it was a way for LLMs to get data, but I didn&amp;rsquo;t know for sure.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Organizing my screenshots folder with a local VLM</title>
       <link>http://jspann.github.io/blog/posts/my_screenshots_arent_organized/</link>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <title>Creating an MCP Server to answer questions about me - While in the lab</title>
+
+    
+    
+    <meta name="description" content="I caught up with a friend on the phone on saturday who mentioned he was using an MCP Server to interact with Google Flights.	Knowing how much it sucks to coordinate travel online, that immediately caught my attention. He told me about one for reddit and that used Gemini CLI (Google, you need to advertise this more!) to do it.
+Later, also on the phone, in the same day, my dad asked &ldquo;What is an MCP Server?&rdquo;. In passing, I had heard it was a way for LLMs to get data, but I didn&rsquo;t know for sure." />
+    <meta name="author" content="" />
+    
+
+    <link href="https://unpkg.com/@master/normal.css" rel="stylesheet">
+    <script src="https://unpkg.com/@master/style@1.5.0"></script>
+    <script src="https://unpkg.com/@master/styles@1.13.0"></script>
+    <script src="https://unpkg.com/master-styles-group"></script>
+    <script src="https://unpkg.com/themes.js"></script>
+    <script>window.themes = window.themes || new window.Themes()</script>
+
+    <style>
+        :root {
+            --font-sans: "Inter var", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+        }
+    </style></head>
+<body class="bg:fade-84@dark font:fade-16@dark font:sans">
+    <nav class="w:full h:90 fixed bg:fade-84/.95@dark bg:white z:1000">
+    <div class="
+        h:full
+        w:full
+        max-w:1200
+        mx:auto
+        px:32
+        d:flex
+        align-items:center
+    ">
+        <div>
+            <a href="/" class="mr-3 font:extralight">
+              
+              While in the lab
+              
+            </a>
+        </div>
+
+        <div class="ml:auto">
+            
+            
+            
+        </div>
+    </div>
+</nav>
+<div class="d:flex flex:column@<=sm pt:90 px:24 jc:center gap:44 word-break:break-word">
+        <div class="max-w:700 w:full box:content-box">
+<article class="box:border-box pt:32">
+    <header class="mb:32">
+        <div class="font:40 font:extrabold">Creating an MCP Server to answer questions about me</div>
+        <div class="mt:16 f:fade-60">
+            <time>Apr 20, 2026</time>
+            </div>
+    </header><div class="
+    _:where(a):hover{text-decoration-color:fade}
+    _:where(a){text-decoration:2;underline;fade-10;_text-decoration-color:fade-70@dark}
+    _:where(blockquote){bl:5;solid;fade-76/.1;_bl:5;solid;fade-34/.1@dark}
+    _:where(code){font:90%;_v:middle}
+    _:where(code:not(.highlight_*,pre_*)){p:2;6;_r:4}
+    _:where(del){text-decoration:1;line-through;fade-68;_text-decoration-color:red-64@dark}
+    _:where(figcaption){text:14;_p:10;20;0;_width:fit;_mx:auto;_font:fade-56;_font:fade-57@dark}
+    _:where(h1){font:40;_font:extrabold}
+    _:where(h1,h2,h3)+:where(h1,h2,h3){mt:.5em}
+    _:where(h1,h2,h3,h4,h5,h6){mt:2em}
+    _:where(h2){mb:1em;_font:32}
+    _:where(h3){font:24}
+    _:where(h4){font:20}
+    _:where(h5){font:16}
+    _:where(h6){font:14}
+    _:where(li)::marker{font:fade-44;_font:fade-68@dark}
+    _:where(li){pl:.375em}
+    _:where(mark){text-decoration:1;underline;#fce016;_bg:transparent;_text-decoration-color:rgb(252;224;22/.5)@dark}
+    _:where(p,li){font:fade-76;_font:16;_line-height:1.65;_font:fade-34@dark}
+    _:where(p,pre,blockquote,figure,ul,ol,table){my:1.125em}
+    >:first-child{mt:0!}
+    _:where(pre){p:20;_r:8;_overflow:auto}
+    _:where(pre,code:not(.highlight_*)){bg:fade-2;_bg:fade-92!@dark}
+    _:where(strong,b,a,code:not(.highlight_*),mark,del){font:fade-92;_font:fade-12@dark}
+    _:where(table){width:full;_border-spacing:0}
+    _:where(td){v:baseline}
+    _:where(td,th):first-child{pl:0}
+    _:where(td,th):last-child{pr:0}
+    _:where(td,th){bb:1;solid;fade-92/.06;_p:6;_b:fade-4/.04@dark}
+    _:where(th){font:fade-78;_font:14;_text:left;_font:fade-12@dark}
+    _:where(th,p_code,li_code,a,mark){font:semibold;_font:medium@dark}
+    _:where(ul){list-style-type:disc}
+    _:where(ul,ol,blockquote){pl:1.5em}
+    _:where(video,img){max-width:full}
+    _:where(a,mark){text-underline-offset:3}
+    _:where(hr){h:2;_bg:fade-10;_bg:fade-70@dark;_my:3em}
+"><p>I caught up with a friend on the phone on saturday who mentioned he was using an MCP Server to interact with Google Flights.	Knowing how much it sucks to coordinate travel online, that immediately caught my attention. He told me about one for reddit and that used <a href="https://geminicli.com">Gemini CLI</a> (<em>Google, you need to advertise this more!</em>) to do it.</p>
+<p>Later, also on the phone, in the same day, my dad asked &ldquo;What is an MCP Server?&rdquo;. In passing, I had heard it was a way for LLMs to get data, but I didn&rsquo;t know for sure.</p>
+<p>I read a few guides on RAGs vs MCPs vs APIs (<a href="https://medium.com/@alice_bui/what-is-mcp-an-eli5-guide-mcp-vs-rag-vs-traditional-apis-b690b15a46b2">this one helped me get the concepts</a> and <a href="https://github.com/modelcontextprotocol/python-sdk">this gave me more detail</a>) and can surmise that:</p>
+<ul>
+<li>A RAG is a database of vectors; Read-only; Good for large volumes of documents</li>
+<li>MCP is a way to connect to a server with tools and resources (data like files or websites) that a model/agent can interact with; basically an API for LLMs; Read and write</li>
+</ul>
+<p>I was surprised to learn MCP is just a standard of JSON-RPC. Knowing this, I decided the best way to learn was to build a server myself.</p>
+<h3 id="trying-it-out-in-python-and-typescript">Trying it out in Python and Typescript</h3>
+<p>Python is always my language of choice. I followed the <a href="https://modelcontextprotocol.io/docs/develop/build-server">MCP website&rsquo;s tutorial</a> on my machine but couldn&rsquo;t get it to run on cloudflare workers (something I had never used before but something Google Gemini suggested and <em>assured</em> me that I could run python scripts on). After banging my head for a bit, and since Cloudflare workers natively has typescript, I just switched to building in typescript.</p>
+<p>I found an <a href="https://mcpplaygroundonline.com/mcp-test-server">MCP testing site</a> online and used it to verify my setup worked. Huzzah!</p>
+<p><img src="https://jspann.me/blog_images/mcp_test_server.png" alt=""></p>
+<p>Reading more into the docs and &ldquo;tools&rdquo; section of MCP I thought it would be fun to make it possible for an agent to message me. I remembered the app <a href="https://en.wikipedia.org/wiki/GroupMe">GroupMe</a> had an API for message sending, and dug up my old dorm-controlling Python scripts and used Gemini to convert them to typescript and add that to my MCP server.</p>
+<p>I plugged it into Cursor and it worked very well!</p>
+<p><img src="https://jspann.me/blog_images/cursor_output_screenshot.png" alt=""></p>
+<p>Playing around with some messages, it is <em>very</em> fun to tell the model to &ldquo;text James the updates made to the front end and why they were necessary&rdquo;. Also added some basic bio facts about me like my undergrad, my skills, and my code writing habits.</p>
+<p>I like using Cursor to automate basic code things but it dawned on me how useful this could be if I added:</p>
+<ul>
+<li><strong>Tools</strong> which can notify me when something needs to be adjusted or activate some real world behavior like turning a light on/off</li>
+<li><strong>Resources</strong> with information about the goals of project I&rsquo;m working on to make sure the code is aligned, or pull the full text from papers to review an algorithim</li>
+<li><strong>Prompts</strong> that can template repetitive tasks like debugging something or what the last changes in git were</li>
+</ul>
+<p>Very very cool.</p>
+<h3 id="sending-it-around">Sending it around</h3>
+<p>I&rsquo;m applying to jobs and internships, and <em><strong>woof</strong></em> it&rsquo;s rough out there. When sending this around to friends and family, I also got the idea: why not let potential employers also ask about me?</p>
+<p>I started adding an MCP link just below my website address when cold emailing. Feels a little spammy but I&rsquo;ll try it out.</p>
+<p><img src="https://jspann.me/blog_images/outlook_mcp_signature.png" alt=""></p>
+<p>Unfortunately, it looks like I can&rsquo;t redirect to my server from my <code>jspann.me</code> domain without moving to cloudflare (I love porkbun too much) so it remains on a workers.dev URL.</p>
+<h3 id="youre-still-here-the-blog-post-is-over-go-home">You&rsquo;re still here? The blog post is over, go home!</h3>
+<p>In the short term, I think it could be fun to add realtime data about me, but don&rsquo;t want to dox myself.</p>
+<p>Some other future ideas:</p>
+<ul>
+<li>Assist with (not do) skimming of papers for literature review. I think a lot of tools do the overkill of trying to use the WHOLE of every paper published ever to do a review when the best paper reviews begin with some starter papers and iterate in a targeted and curated way across conferences, years, and citations. This could also be extended to automatically writing the code based on the methods in the literature</li>
+<li>Trip planning. Coordinating across flights and calendars and things to see and do, especially when trying to do things cheaply, could be improved</li>
+<li>A local version (not exposed to the internet) for updating my calendar and coordinating events, like dinners with friends, or staying organized with my personal goals and long term plans</li>
+</ul>
+<p>It&rsquo;s a balancing act. Automating it all removes the sponteneity that leads to new ideas and unique scenarios. A little help and curation gives some good assistance to do things faster and easier.</p>
+<p>If you want to know more about me, don&rsquo;t be afraid to ask: <a href="https://aboutme-mcp.james-9ef.workers.dev">https://aboutme-mcp.james-9ef.workers.dev</a></p>
+<hr>
+<p>An LLM (Google Gemini) was used to write the code for the MCP Server and advised on the setup and implementation. This post was written and reviewed by a human (me!)</p>
+</div></article>
+<footer class="py:24">
+    <div class="f:fade-30 f:14 mb:8"></div>
+    <div class="f:fade-60 f:12">Theme <a class="f:bold" href="https://github.com/serkodev/holy" _target="_blank">Holy</a></div>
+</footer></div>
+    </div>
+</body>
+
+</html>
