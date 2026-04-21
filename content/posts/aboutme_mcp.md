@@ -65,7 +65,10 @@ Some other future ideas:
  It's a balancing act. Automating it all removes the sponteneity that leads to new ideas and unique scenarios. A little help and curation gives some good assistance to do things faster and easier.
 
 
-If you want to know more about me, don't be afraid to ask: https://aboutme-mcp.james-9ef.workers.dev
+If you want to send a quick message (e.g. "Send James a message that I liked this post!") or want to know more about me, don't be afraid to ask: https://aboutme-mcp.james-9ef.workers.dev
+
+
+__Next day edit:__ Starbucks announced [integration with ChatGPT](https://about.starbucks.com/press/2026/a-new-way-to-inspire-your-starbucks-order/) with basically an MCP app. It doesn't make much sense since it takes more interactions and time to get to actually ordering, but that's a UI/UX problem that can be solved.
 
 ---
 An LLM (Google Gemini) was used to write the code for the MCP Server and advised on the setup and implementation. This post was written and reviewed by a human (me!)
