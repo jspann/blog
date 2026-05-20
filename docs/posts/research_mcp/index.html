@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <title>Creating another MCP server, but this one is for research - While in the lab</title>
+
+    
+    
+    <meta name="description" content="In the weeks following my last blog post, I had a niggling feeling that I could apply an MCP server to my literature review. This post is my first run at exploring that.
+During my grad degree, it has been one of the hardest aspects I&rsquo;ve had to learn: How do you take papers and distill them down to a supporting argument, a newfound gap, or evidence that something you want to build has a high chance of working? It&rsquo;s initially really time consumptive, and to my surprise, isn&rsquo;t a uniform process for labs and researchers. For me I have a massive Google sheet with a tab for each area I&rsquo;m investigating, a column for each aspect I want to explore in that area, and a row for each paper I&rsquo;ve found. With some starter papers in hand I&rsquo;ll review the papers it cites (backwards pass) and the papers that cite it (forward pass) and add new papers to the spreadsheet based on relevance to the area. Another student I know tries to follow something similar to a PRISMA approach by reviewing a conference at a time, screening papers, and including works in their manuscript based on eligibility. Another student frantically searches keywords on Google Scholar right before the deadline (this is ill-advised)." />
+    <meta name="author" content="" />
+    
+
+    <link href="https://unpkg.com/@master/normal.css" rel="stylesheet">
+    <script src="https://unpkg.com/@master/style@1.5.0"></script>
+    <script src="https://unpkg.com/@master/styles@1.13.0"></script>
+    <script src="https://unpkg.com/master-styles-group"></script>
+    <script src="https://unpkg.com/themes.js"></script>
+    <script>window.themes = window.themes || new window.Themes()</script>
+
+    <style>
+        :root {
+            --font-sans: "Inter var", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+        }
+    </style></head>
+<body class="bg:fade-84@dark font:fade-16@dark font:sans">
+    <nav class="w:full h:90 fixed bg:fade-84/.95@dark bg:white z:1000">
+    <div class="
+        h:full
+        w:full
+        max-w:1200
+        mx:auto
+        px:32
+        d:flex
+        align-items:center
+    ">
+        <div>
+            <a href="/" class="mr-3 font:extralight">
+              
+              While in the lab
+              
+            </a>
+        </div>
+
+        <div class="ml:auto">
+            
+            
+            
+        </div>
+    </div>
+</nav>
+<div class="d:flex flex:column@<=sm pt:90 px:24 jc:center gap:44 word-break:break-word">
+        <div class="max-w:700 w:full box:content-box">
+<article class="box:border-box pt:32">
+    <header class="mb:32">
+        <div class="font:40 font:extrabold">Creating another MCP server, but this one is for research</div>
+        <div class="mt:16 f:fade-60">
+            <time>May 19, 2026</time>
+            </div>
+    </header><div class="
+    _:where(a):hover{text-decoration-color:fade}
+    _:where(a){text-decoration:2;underline;fade-10;_text-decoration-color:fade-70@dark}
+    _:where(blockquote){bl:5;solid;fade-76/.1;_bl:5;solid;fade-34/.1@dark}
+    _:where(code){font:90%;_v:middle}
+    _:where(code:not(.highlight_*,pre_*)){p:2;6;_r:4}
+    _:where(del){text-decoration:1;line-through;fade-68;_text-decoration-color:red-64@dark}
+    _:where(figcaption){text:14;_p:10;20;0;_width:fit;_mx:auto;_font:fade-56;_font:fade-57@dark}
+    _:where(h1){font:40;_font:extrabold}
+    _:where(h1,h2,h3)+:where(h1,h2,h3){mt:.5em}
+    _:where(h1,h2,h3,h4,h5,h6){mt:2em}
+    _:where(h2){mb:1em;_font:32}
+    _:where(h3){font:24}
+    _:where(h4){font:20}
+    _:where(h5){font:16}
+    _:where(h6){font:14}
+    _:where(li)::marker{font:fade-44;_font:fade-68@dark}
+    _:where(li){pl:.375em}
+    _:where(mark){text-decoration:1;underline;#fce016;_bg:transparent;_text-decoration-color:rgb(252;224;22/.5)@dark}
+    _:where(p,li){font:fade-76;_font:16;_line-height:1.65;_font:fade-34@dark}
+    _:where(p,pre,blockquote,figure,ul,ol,table){my:1.125em}
+    >:first-child{mt:0!}
+    _:where(pre){p:20;_r:8;_overflow:auto}
+    _:where(pre,code:not(.highlight_*)){bg:fade-2;_bg:fade-92!@dark}
+    _:where(strong,b,a,code:not(.highlight_*),mark,del){font:fade-92;_font:fade-12@dark}
+    _:where(table){width:full;_border-spacing:0}
+    _:where(td){v:baseline}
+    _:where(td,th):first-child{pl:0}
+    _:where(td,th):last-child{pr:0}
+    _:where(td,th){bb:1;solid;fade-92/.06;_p:6;_b:fade-4/.04@dark}
+    _:where(th){font:fade-78;_font:14;_text:left;_font:fade-12@dark}
+    _:where(th,p_code,li_code,a,mark){font:semibold;_font:medium@dark}
+    _:where(ul){list-style-type:disc}
+    _:where(ul,ol,blockquote){pl:1.5em}
+    _:where(video,img){max-width:full}
+    _:where(a,mark){text-underline-offset:3}
+    _:where(hr){h:2;_bg:fade-10;_bg:fade-70@dark;_my:3em}
+"><p>In the weeks following <a href="https://jspann.me/blog/posts/aboutme_mcp/">my last blog post</a>, I had a niggling feeling that I could apply an MCP server to my literature review. This post is my first run at exploring that.</p>
+<p>During my grad degree, it has been one of the hardest aspects I&rsquo;ve had to learn: How do you take papers and distill them down to a supporting argument, a newfound gap, or evidence that something you want to build has a high chance of working? It&rsquo;s initially <em>really</em> time consumptive, and to my surprise, isn&rsquo;t a uniform process for labs and researchers. For me I have a <strong>massive</strong> Google sheet with a tab for each area I&rsquo;m investigating, a column for each aspect I want to explore in that area, and a row for each paper I&rsquo;ve found. With some starter papers in hand I&rsquo;ll review the papers it cites (backwards pass) and the papers that cite it (forward pass) and add new papers to the spreadsheet based on relevance to the area. Another student I know tries to follow something similar to a <a href="https://en.wikipedia.org/wiki/Preferred_Reporting_Items_for_Systematic_Reviews_and_Meta-Analyses">PRISMA approach</a> by reviewing a conference at a time, screening papers, and including works in their manuscript based on eligibility. Another student frantically searches keywords on Google Scholar right before the deadline (<em>this is ill-advised</em>).</p>
+<p>However, not everyone takes this approach. Last year I reviewed a paper where every single citation was fake. All of them. It was not only a waste of my time, but if I hadn&rsquo;t caught it, it could have been published and given false credibility to an idea that hadn&rsquo;t been proven. This is one of the reasons why the pre-print site ArXiv announced they&rsquo;re <a href="https://techcrunch.com/2026/05/16/research-repository-arxiv-will-ban-authors-for-a-year-if-they-let-ai-do-all-the-work/">banning authors if they let LLMs generate the paper</a> and <a href="https://2026.aclweb.org/acl_statement/">ACL will desk reject papers with fake citations</a>.</p>
+<p>I think LLMs can have their place in the research process but the review of related work is what makes a work trustworthy and part of a solid foundation for others to use. There are some LLM tools that try to improve on the paper-finding process (<a href="https://scholar.google.com/scholar_labs/search?hl=en">Google Scholar Labs</a>, <a href="https://www.undermind.ai">Undermind.ai</a>) but reproducibility of that search process still can be an issue and it can be unclear to see how a selected work fits into a broader scope of an area.</p>
+<p>The jury is still out on how these models will be used in the future, but I was interested in how I could use one to make a tool to aid in my reviews.</p>
+<h3 id="initial-idea">Initial idea</h3>
+<p>I wanted to build a tool that helped me to make arguments but also was grounded in real research concepts and could be audited for correctness.</p>
+<p>I started with my spreadsheet of papers I&rsquo;ve already reviewed and decided building an MCP server that could review through those made sense. This way I also don&rsquo;t have any real storage costs, since I could use the Google Docs API to &ldquo;host&rdquo; the detailed attributes of papers that I had already vetted. There&rsquo;s 16 active-ish sheets with about 30 papers each, but I started with just four sheets (i.e. research areas).</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: center"><img src="https://jspann.me/blog_images/paper_review_spreadsheet.png" alt=""></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center"><em>A screenshot of my literature review spreadsheet on Google Sheets</em></td>
+      </tr>
+  </tbody>
+</table>
+<p>I used Claude to write a short Python script to create a basic MCP server that I could host on AWS Lambda (free tier!). The server had a function (technically called a tool) for each sheet and an additional prompt for a description of my prototype, my study goal, and my planned study procedure.</p>
+<p>Once I wired the server into cursor, I gave it a go:</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: center"><img src="https://jspann.me/blog_images/research_mcp_screenshot_1.png" alt=""></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center"><em>Generating summaries of methods based on prior work I&rsquo;ve reviewed</em></td>
+      </tr>
+  </tbody>
+</table>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: center"><img src="https://jspann.me/blog_images/research_mcp_screenshot_2.png" alt=""></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center"><em>Genrating arguments based on methods in prior work</em></td>
+      </tr>
+  </tbody>
+</table>
+<p>I like this because I know how it arrived at these claims and I know which papers I need to review if I want more details on them. Plus, if I make changes in my spreadsheet, it&rsquo;s instantly reflected in my server. That being said, it isn&rsquo;t perfect; The output is unstructured and some papers were repeated since I didn&rsquo;t have a broad enough scope of that sub-area, but I think I could solve that with an updated review.</p>
+<p>My next step was a new sheet/tab that holds all the <code>gids</code> (indicies in Google sheets to reference each sheet in the file) associated with an area. This made it so I could auto-generate a function that I could call for getting the papers from each area. I also added search functions so in addition to getting all of the papers in a given area, the server would allow the model to search a column of a specific sheet, which is particularly helpful on columns that are boolean values.</p>
+<h2 id="on-device-at-home-maybe-later">On device? At home?? Maybe later</h2>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: center"><img src="https://jspann.me/blog_images/orangepi.png" alt=""></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center"><em>Orange Pi could locally run the MCP server</em></td>
+      </tr>
+  </tbody>
+</table>
+<p>I have an <a href="http://www.orangepi.org">Orange Pi</a> in my apartment that could hold the full spreadsheet and the MCP server. I could also locally run an LLM, like Liquid AI&rsquo;s <a href="https://www.liquid.ai/models">LFM 2.5</a> or a Llama model, on my mac to call the MCP server. The <em>really</em> fun idea would be to have the server, when it&rsquo;s not being used, screen new proceedings and email me a daily summary of things semantically (via keyword embeddings?) related to my study goals (currently a prompt in the MCP server). I currently have an RSS feed of ArXiv HCI and some SIGCHI conferences, but would appreciate this as another addition.</p>
+<h2 id="llama-i-believe-this-is-the-beginning-of-a-beautiful-friendship">Llama, I Believe This Is The Beginning Of A Beautiful Friendship</h2>
+<p>Do I use this tool for research right now? No, it is still just a toy. I don&rsquo;t think its a good idea to automate away all of the human curation that goes into building good science, but do like like the idea of aids and additions to improve (not necessarily speed up) human ability.</p>
+<hr>
+<p>An LLM (Claude) was used to write the code for the MCP Server and advised on the setup and AWS implementation. This post was written and reviewed by a human (me!)</p>
+</div></article>
+<footer class="py:24">
+    <div class="f:fade-30 f:14 mb:8"></div>
+    <div class="f:fade-60 f:12">Theme <a class="f:bold" href="https://github.com/serkodev/holy" _target="_blank">Holy</a></div>
+</footer></div>
+    </div>
+</body>
+
+</html>

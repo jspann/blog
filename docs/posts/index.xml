@@ -6,8 +6,15 @@
     <description>Recent content in Posts on While in the lab</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 20 Apr 2026 09:41:39 -0400</lastBuildDate>
+    <lastBuildDate>Tue, 19 May 2026 20:25:44 -0400</lastBuildDate>
     <atom:link href="http://jspann.github.io/blog/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Creating another MCP server, but this one is for research</title>
+      <link>http://jspann.github.io/blog/posts/research_mcp/</link>
+      <pubDate>Tue, 19 May 2026 20:25:44 -0400</pubDate>
+      <guid>http://jspann.github.io/blog/posts/research_mcp/</guid>
+      <description>&lt;p&gt;In the weeks following &lt;a href=&#34;https://jspann.me/blog/posts/aboutme_mcp/&#34;&gt;my last blog post&lt;/a&gt;, I had a niggling feeling that I could apply an MCP server to my literature review. This post is my first run at exploring that.&lt;/p&gt;&#xA;&lt;p&gt;During my grad degree, it has been one of the hardest aspects I&amp;rsquo;ve had to learn: How do you take papers and distill them down to a supporting argument, a newfound gap, or evidence that something you want to build has a high chance of working? It&amp;rsquo;s initially &lt;em&gt;really&lt;/em&gt; time consumptive, and to my surprise, isn&amp;rsquo;t a uniform process for labs and researchers. For me I have a &lt;strong&gt;massive&lt;/strong&gt; Google sheet with a tab for each area I&amp;rsquo;m investigating, a column for each aspect I want to explore in that area, and a row for each paper I&amp;rsquo;ve found. With some starter papers in hand I&amp;rsquo;ll review the papers it cites (backwards pass) and the papers that cite it (forward pass) and add new papers to the spreadsheet based on relevance to the area. Another student I know tries to follow something similar to a &lt;a href=&#34;https://en.wikipedia.org/wiki/Preferred_Reporting_Items_for_Systematic_Reviews_and_Meta-Analyses&#34;&gt;PRISMA approach&lt;/a&gt; by reviewing a conference at a time, screening papers, and including works in their manuscript based on eligibility. Another student frantically searches keywords on Google Scholar right before the deadline (&lt;em&gt;this is ill-advised&lt;/em&gt;).&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Creating an MCP Server to answer questions about me</title>
       <link>http://jspann.github.io/blog/posts/aboutme_mcp/</link>
