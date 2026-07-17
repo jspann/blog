@@ -6,8 +6,15 @@
     <description>Recent content on While in the lab</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 19 May 2026 20:25:44 -0400</lastBuildDate>
+    <lastBuildDate>Fri, 17 Jul 2026 10:29:08 -0400</lastBuildDate>
     <atom:link href="http://jspann.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How I get and find music now</title>
+      <link>http://jspann.github.io/blog/posts/finding_new_music/</link>
+      <pubDate>Fri, 17 Jul 2026 10:29:08 -0400</pubDate>
+      <guid>http://jspann.github.io/blog/posts/finding_new_music/</guid>
+      <description>&lt;p&gt;Inspired by a few &lt;a href=&#34;https://news.ycombinator.com/item?id=48930454&#34;&gt;recent&lt;/a&gt; &lt;a href=&#34;https://news.ycombinator.com/item?id=46338339&#34;&gt;posts&lt;/a&gt; on &lt;a href=&#34;https://news.ycombinator.com/item?id=29407201&#34;&gt;HN&lt;/a&gt; I wanted to make this post and share some of the ways I&amp;rsquo;ve been going about finding new music. There&amp;rsquo;s both a lot of ways to get music and ways to find new music. This is a list of some things that did/didn&amp;rsquo;t work for me.&lt;/p&gt;&#xA;&lt;p&gt;While I have a wide range of interests, and after some lofty experimentation, I generally gravitate towards Cinematic Scores and Soundtracks, {Acid, Progressive, Italo, Future, &amp;hellip;} House, {Pop, Skate} Punk, Hip Hop, and {Math, Alternative} Rock, so this will mainly be focused on how I found music in those areas.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Creating another MCP server, but this one is for research</title>
       <link>http://jspann.github.io/blog/posts/research_mcp/</link>

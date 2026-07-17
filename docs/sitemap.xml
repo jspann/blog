@@ -2,13 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://jspann.github.io/blog/posts/research_mcp/</loc>
-    <lastmod>2026-05-19T20:25:44-04:00</lastmod>
+    <loc>http://jspann.github.io/blog/posts/finding_new_music/</loc>
+    <lastmod>2026-07-17T10:29:08-04:00</lastmod>
   </url><url>
     <loc>http://jspann.github.io/blog/posts/</loc>
-    <lastmod>2026-05-19T20:25:44-04:00</lastmod>
+    <lastmod>2026-07-17T10:29:08-04:00</lastmod>
   </url><url>
     <loc>http://jspann.github.io/blog/</loc>
+    <lastmod>2026-07-17T10:29:08-04:00</lastmod>
+  </url><url>
+    <loc>http://jspann.github.io/blog/posts/research_mcp/</loc>
     <lastmod>2026-05-19T20:25:44-04:00</lastmod>
   </url><url>
     <loc>http://jspann.github.io/blog/posts/aboutme_mcp/</loc>
