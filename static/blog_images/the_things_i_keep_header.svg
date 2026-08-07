@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">The Things I Keep</title>
+  <desc id="desc">A dark editorial still life of a notebook, headphones, books, a camera, and a record.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#111b24"/>
+      <stop offset="1" stop-color="#283129"/>
+    </linearGradient>
+    <radialGradient id="lamp" cx="75%" cy="22%" r="45%">
+      <stop offset="0" stop-color="#c7a878" stop-opacity=".28"/>
+      <stop offset="1" stop-color="#c7a878" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#000" flood-opacity=".38"/></filter>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#lamp)"/>
+  <rect x="0" y="610" width="1600" height="290" fill="#171918" opacity=".78"/>
+  <g filter="url(#shadow)">
+    <rect x="815" y="510" width="520" height="250" rx="8" fill="#d8d0c0" transform="rotate(-4 1075 635)"/>
+    <line x1="870" y1="566" x2="1260" y2="540" stroke="#b8ad9b" stroke-width="3"/>
+    <line x1="875" y1="615" x2="1268" y2="589" stroke="#b8ad9b" stroke-width="3"/>
+    <line x1="880" y1="665" x2="1274" y2="639" stroke="#b8ad9b" stroke-width="3"/>
+    <line x1="886" y1="715" x2="1280" y2="689" stroke="#b8ad9b" stroke-width="3"/>
+    <rect x="1015" y="540" width="14" height="178" rx="7" fill="#24292b" transform="rotate(16 1022 629)"/>
+    <rect x="500" y="548" width="300" height="42" rx="4" fill="#6e5644"/>
+    <rect x="520" y="590" width="305" height="46" rx="4" fill="#a18c72"/>
+    <rect x="485" y="636" width="330" height="51" rx="4" fill="#474f48"/>
+    <circle cx="375" cy="620" r="122" fill="#101315" stroke="#333b3d" stroke-width="20"/>
+    <circle cx="375" cy="620" r="58" fill="#171b1c" stroke="#77776d" stroke-width="8"/>
+    <path d="M238 575c-42 8-71 46-68 91 3 46 36 81 79 84" fill="none" stroke="#171b1c" stroke-width="28" stroke-linecap="round"/>
+    <path d="M512 573c45 5 77 41 77 86 0 46-31 83-73 90" fill="none" stroke="#171b1c" stroke-width="28" stroke-linecap="round"/>
+    <rect x="1190" y="210" width="210" height="150" rx="12" fill="#171b1e"/>
+    <circle cx="1295" cy="285" r="63" fill="#0e1011" stroke="#5d6260" stroke-width="8"/>
+    <circle cx="1295" cy="285" r="24" fill="#85877f"/>
+    <rect x="1236" y="175" width="118" height="46" rx="8" fill="#292e2f"/>
+  </g>
+  <text x="105" y="160" fill="#f2eee4" font-family="Georgia, serif" font-size="80">The Things I Keep</text>
+  <text x="110" y="220" fill="#c8c0b2" font-family="Arial, sans-serif" font-size="26" letter-spacing="2">MUSIC · BOOKS · THE PRACTICE OF CURATION</text>
+  <line x1="110" y1="270" x2="310" y2="270" stroke="#b68a70" stroke-width="5"/>
+</svg>
